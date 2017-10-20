@@ -10,16 +10,16 @@ import Foundation
 class Tip {
     
     
-    func pilotTip(pilots: Pilot...) -> [Pilot] {
-        print("Tips...")
-        for pilot in pilots {
-            print("\(pilot.name)")
-        }
-        return pilots
-    }
+    var earnedMoney = 0
     
-    func equal(tips: [Pilot], sequenceInFinish: [Pilot]) {
-        
-        
+    var firstPositionPilot:String = ""
+    var secondPositionPilot:String = ""
+    var thirdPositionPilot:String = ""
+    
+    
+    func setPilots(firstPilot:String, secondPilot:String, thirdPilot:String) {
+        firstPositionPilot = firstPilot
+        secondPositionPilot = secondPilot
+        thirdPositionPilot = thirdPilot
     }
 }

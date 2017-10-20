@@ -7,10 +7,14 @@
 //
 
 import Foundation
+
 class Circuit {
     let GP: String
     let nameCircuit: String
     let lenghtInMeters: Int
+    
+    var result: CircuitResult!
+    
     
     init(GP:String, nameCircuit: String, lenghtInMeters: Int) {
         
@@ -19,10 +23,14 @@ class Circuit {
         self.lenghtInMeters = lenghtInMeters
     }
     
-    func startCircuit(pilots: [Pilot]) -> CircuitResult {
-        let result = CircuitResult()
+    func startCircuit(pilots: [Pilot], tip:Tip) {
+        result = CircuitResult()
         result.array(pilots: pilots)
-        return result
+        
+        if(result.getWinner().ID == tip.firstPositionPilot) {
+            tip.earnedMoney += 50
+            print("ZISKALI SME 50 CZK!!!")
+        }
     }
     
     func circuitTip(pilots: [Pilot]) -> CircuitResult {
